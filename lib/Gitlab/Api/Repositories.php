@@ -148,7 +148,7 @@ class Repositories extends AbstractApi
     public function commits($project_id, array $parameters = [])
     {
         $resolver = $this->createOptionsResolver();
-        $datetimeNormalizer = function (\DateTimeInterface $value) {
+        $datetimeNormalizer = function (OptionsResolver $resolver, \DateTimeInterface $value) {
             return $value->format('c');
         };
 
